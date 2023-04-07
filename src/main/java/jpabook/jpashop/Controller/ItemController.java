@@ -21,7 +21,6 @@ public class ItemController {
         model.addAttribute("form", new BookForm());
         return "items/createItemForm";
     }
-
     @PostMapping("/items/new")
     public String create(BookForm form){
         Book book = new Book();
