@@ -20,13 +20,13 @@ public class ItemService {
         itemRepository.save(item);
     }
 
-    //변경 감지 기능 사용
+    //변경 감지 기능 사용(merge를 사용하기보다는 변경 감지 기능을 사용해야 한다!!!!!)
     @Transactional
-    public void updateItem(Long itemId, Book param){
+    public void updateItem(Long itemId, String name, int price, int stockQuantity){
         Item findItem = itemRepository.findOne(itemId);
-        findItem.setPrice(param.getPrice());
-        findItem.setName(param.getName());
-        findItem.setStockQuantity(param.getStockQuantity());
+        findItem.setPrice(price);
+        findItem.setName(name);
+        findItem.setStockQuantity(stockQuantity);
     }
     public List<Item> findItems(){
         return itemRepository.findAll();
