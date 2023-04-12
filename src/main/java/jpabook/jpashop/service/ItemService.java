@@ -19,7 +19,6 @@ public class ItemService {
     public void saveItem(Item item){
         itemRepository.save(item);
     }
-
     //변경 감지 기능 사용(merge를 사용하기보다는 변경 감지 기능을 사용해야 한다!!!!!)
     @Transactional
     public void updateItem(Long itemId, String name, int price, int stockQuantity){
